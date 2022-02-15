@@ -1,0 +1,20 @@
+<html>
+    <head>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class=flashes>
+                {% for message in messages%}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+        <h1>Enter your campus ID</h1>
+        <form method="POST" action="/handle_form">
+            <input type="text" name="campus_id">
+            <button type="submit" value="Submit">Submit</button>
+        </form>
+    </body>
+</html>
