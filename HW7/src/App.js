@@ -7,13 +7,12 @@ function App() {
   const handleClick = () => {
     fetch("/funfact")
       .then(response => response.json())
-      .then(data => console.log(data))
-    setFact("done")
+      .then(data => setFact(data[Math.floor(Math.random() * 3)]))
   }
   return (
     <div className="App">
       <p>Fun Fact: {fact}</p>
-      <button onClick={handleClick}></button>
+      <button onClick={handleClick}>New Fact</button>
     </div>
   );
 }
